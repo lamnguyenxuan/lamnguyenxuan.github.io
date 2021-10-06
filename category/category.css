@@ -151,7 +151,7 @@ select:hover{
     overflow: hidden;
 }
 
-.img-product:hover .info{
+.mini-product:hover .info{
    transform: translateY(-50px);
 }
 .img-product .info{

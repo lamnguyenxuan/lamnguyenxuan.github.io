@@ -596,7 +596,7 @@ img{
     overflow: hidden;
 }
 
-.img-product:hover .info{
+.mini-product:hover .info{
    /* display: block; */
    transform: translateY(-50px);
 }
