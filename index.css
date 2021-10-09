@@ -58,6 +58,10 @@ img{
     color: white;
     display: inline-block;
 }
+#header a:hover{
+    color: #70C130!important;
+}
+
 .item{
     display: flex;
     align-items: center;
@@ -143,6 +147,10 @@ img{
 .search input::placeholder{
     color: white;
 }
+.my-class::placeholder {
+    color: #905d2f!important;
+ }
+ 
 .search{
     margin-left: 30px;
     position: relative;
@@ -525,6 +533,10 @@ img{
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
+    cursor: pointer;
+}
+.introduce-container-1 button:hover{
+    background-color: green;
 }
 .product{
     margin-top: 50px;
@@ -702,6 +714,10 @@ img{
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
+    cursor: pointer;
+}
+.info-hightlight button:hover{
+    background-color: green;
 }
 .hightlight-slides{
     margin-top: 50px;
@@ -894,7 +910,7 @@ img{
         margin-top: 20px;
     }
     .hightlight-slide img{
-        max-width: 47%;
+        width: 50%;
     }
     .comment-mini h1{
         font-size: 40px;

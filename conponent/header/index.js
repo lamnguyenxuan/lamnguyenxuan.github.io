@@ -27,13 +27,13 @@ close_search.click(function(){
 
 var lastScrollTop = 0;
 var header_top = document.getElementById("header");
+var item_header_top = document.querySelector("#header a");
 window.addEventListener("scroll", function () {
 	var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 	if (scrollTop > lastScrollTop) {
-		// header_top.style.top = "80px";
-		header_top.style.background = "#777777";
+		header_top.style.background = "white";
+        item_header_top.style.color = "black";
 	} else {
-		// header_top.style.top = "0";
 		header_top.style.background = "none";
 	}
 	// lastScrollTop = scrollTop;

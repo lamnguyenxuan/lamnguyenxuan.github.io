@@ -160,6 +160,9 @@
     text-transform: uppercase;
     font-size: 18px;
 }
+.show-right h4 a:first-child{
+    font-weight: bold;
+}
 .show-right .product-name{
     font-size: 24px;
     font-weight: 700;
@@ -197,7 +200,7 @@
     text-transform: uppercase;
     font-weight: bolder;
     padding: 10px 20px;
-    margin-left: 25px;
+    /* margin-left: 25px; */
     cursor: pointer;
 }
 .add-to-card:hover{
@@ -331,7 +334,7 @@
     cursor: pointer;
 }
 
-.img-product:hover .info{
+.mini-product:hover .info{
    /* display: block; */
    transform: translateY(-50px);
 }

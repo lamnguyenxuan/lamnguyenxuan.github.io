@@ -9,7 +9,7 @@ $('#header').append(`
                         <a href="../index.html">Trang chủ</a>
                     </li>
                     <li class="item">
-                        <a href="category.html">Sản phẩm</a>
+                        <a href="../category/category.html">Sản phẩm</a>
                     </li>
                     <li class="item">
                         <a href="">
@@ -45,7 +45,7 @@ $('#header').append(`
                 <a href=""><i class="fas fa-search"></i></a>
             </div>
             <div class="cart">
-                <a href="../cart/cart.html"><span>Giỏ hàng</span><i class="fas fa-cart-plus"></i></a>
+                <a href=""><span>Giỏ hàng</span><i class="fas fa-cart-plus"></i></a>
             </div>
         </div>
         
@@ -137,20 +137,105 @@ window.addEventListener("scroll", function () {
 	}
 })
 
-let showItemMain = $('#main-product');
-let productsMain = [
+let default_data_cart = [
     {
         id: 1,
-        img: '../image/product-9.png',
-        miniTitle: 'Rau hữu cơ',
-        nameProduct: 'Bắp cải xanh',
-        price: 12000,
-        discount: '20%',
-        isHightlight: true,
-        isSelling: false,
+        img: '../image/product-8.jpg',
+        miniTitle: 'Hoa quả',
+        nameProduct: 'Bí Ngô',
+        price: 17000,
+        discount: '10%',
+        isHightlight: false,
+        isSelling: true,
         isNew: false,
-        imgs: ['../image/product-main.png', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
-        img_extra: ['../image/product-9.png', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
+        imgs: ['../image/product-8.jpg', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
+        img_extra: ['../image/product-8.jpg', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
+        product_same:[
+            {
+                img: '../image/product-1.jpg',
+                mini_title: 'Hoa quả',
+                name_product: 'Nho xanh',
+                price: '12,000 đ',
+                discount: '20%'
+            },
+            {
+                img: '../image/product-2.jpg',
+                mini_title: 'Hoa quả',
+                name_product: 'Mùng tơi',
+                price: '12,000 đ',
+                discount: '20%'
+            },
+            {
+                img: '../image/product-3.jpg',
+                mini_title: 'Hoa quả',
+                name_product: 'Dứa',
+                price: '12,000 đ',
+                discount: '20%'
+            },
+            {
+                img: '../image/product-4.jpg',
+                mini_title: 'Hoa quả',
+                name_product: 'Củ dền',
+                price: '12,000 đ',
+                discount: '20%'
+            }
+        ]
+    },
+    {
+        id: 1,
+        img: '../image/product-8.jpg',
+        miniTitle: 'Hoa quả',
+        nameProduct: 'Bí Ngô',
+        price: 17000,
+        discount: '10%',
+        isHightlight: false,
+        isSelling: true,
+        isNew: false,
+        imgs: ['../image/product-8.jpg', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
+        img_extra: ['../image/product-8.jpg', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
+        product_same:[
+            {
+                img: '../image/product-1.jpg',
+                mini_title: 'Hoa quả',
+                name_product: 'Nho xanh',
+                price: '12,000 đ',
+                discount: '20%'
+            },
+            {
+                img: '../image/product-2.jpg',
+                mini_title: 'Hoa quả',
+                name_product: 'Mùng tơi',
+                price: '12,000 đ',
+                discount: '20%'
+            },
+            {
+                img: '../image/product-3.jpg',
+                mini_title: 'Hoa quả',
+                name_product: 'Dứa',
+                price: '12,000 đ',
+                discount: '20%'
+            },
+            {
+                img: '../image/product-4.jpg',
+                mini_title: 'Hoa quả',
+                name_product: 'Củ dền',
+                price: '12,000 đ',
+                discount: '20%'
+            }
+        ]
+    },
+    {
+        id: 1,
+        img: '../image/product-8.jpg',
+        miniTitle: 'Hoa quả',
+        nameProduct: 'Bí Ngô',
+        price: 17000,
+        discount: '10%',
+        isHightlight: false,
+        isSelling: true,
+        isNew: false,
+        imgs: ['../image/product-8.jpg', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
+        img_extra: ['../image/product-8.jpg', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
         product_same:[
             {
                 img: '../image/product-1.jpg',
@@ -269,232 +354,17 @@ let productsMain = [
         ]
     },
     {
-        id: 4,
-        img: '../image/product-3.jpg',
-        miniTitle: 'Hoa quả',
-        nameProduct: 'Dứa',
-        price: 19000,
-        discount: '30%',
-        isHightlight: false,
-        isSelling: false,
-        isNew: true,
-        imgs: ['../image/product-3.jpg', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
-        img_extra: ['../image/product-3.jpg', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
-        product_same:[
-            {
-                img: '../image/product-1.jpg',
-                mini_title: 'Hoa quả',
-                name_product: 'Nho xanh',
-                price: '12,000 đ',
-                discount: '20%'
-            },
-            {
-                img: '../image/product-2.jpg',
-                mini_title: 'Hoa quả',
-                name_product: 'Mùng tơi',
-                price: '35,000 đ',
-                discount: '20%'
-            },
-            {
-                img: '../image/product-3.jpg',
-                mini_title: 'Hoa quả',
-                name_product: 'Dứa',
-                price: '12,000 đ',
-                discount: '20%'
-            },
-            {
-                img: '../image/product-4.jpg',
-                mini_title: 'Hoa quả',
-                name_product: 'Củ dền',
-                price: '12,000 đ',
-                discount: '20%'
-            }
-        ]
-    },
-    {
-        id: 5,
-        img: '../image/product-4.jpg',
-        miniTitle: 'Thực phẩm khô',
-        nameProduct: 'Củ dền',
-        price: 23000,
-        discount: '20%',
-        isHightlight: true,
-        isSelling: true,
-        isNew: false,
-        imgs: ['../image/product-4.jpg', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
-        img_extra: ['../image/product-4.jpg', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
-        product_same:[
-            {
-                img: '../image/product-1.jpg',
-                mini_title: 'Hoa quả',
-                name_product: 'Nho xanh',
-                price: '12,000 đ',
-                discount: '20%'
-            },
-            {
-                img: '../image/product-2.jpg',
-                mini_title: 'Hoa quả',
-                name_product: 'Mùng tơi',
-                price: '12,000 đ',
-                discount: '20%'
-            },
-            {
-                img: '../image/product-3.jpg',
-                mini_title: 'Hoa quả',
-                name_product: 'Dứa',
-                price: '12,000 đ',
-                discount: '20%'
-            },
-            {
-                img: '../image/product-4.jpg',
-                mini_title: 'Hoa quả',
-                name_product: 'Củ dền',
-                price: '12,000 đ',
-                discount: '20%'
-            }
-        ]
-    },
-    {
-        id: 6,
-        img: '../image/product-5.jpg',
-        miniTitle: 'Hoa quả',
-        nameProduct: 'Cam cao phong',
-        price: 18000,
-        discount: '15%',
-        isHightlight: true,
-        isSelling: false,
-        isNew: true,
-        imgs: ['../image/product-5.jpg', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
-        img_extra: ['../image/product-5.jpg', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
-        product_same:[
-            {
-                img: '../image/product-1.jpg',
-                mini_title: 'Hoa quả',
-                name_product: 'Nho xanh',
-                price: '12,000 đ',
-                discount: '20%'
-            },
-            {
-                img: '../image/product-2.jpg',
-                mini_title: 'Hoa quả',
-                name_product: 'Mùng tơi',
-                price: '12,000 đ',
-                discount: '20%'
-            },
-            {
-                img: '../image/product-3.jpg',
-                mini_title: 'Hoa quả',
-                name_product: 'Dứa',
-                price: '12,000 đ',
-                discount: '20%'
-            },
-            {
-                img: '../image/product-4.jpg',
-                mini_title: 'Hoa quả',
-                name_product: 'Củ dền',
-                price: '12,000 đ',
-                discount: '20%'
-            }
-        ]
-    },
-    {
-        id: 7,
-        img: '../image/product-6.jpg',
-        miniTitle: 'Thực phẩm khô',
-        nameProduct: 'Cà chua',
-        price: 8000,
-        discount: '15%',
-        isHightlight: false,
-        isSelling: false,
-        isNew: true,
-        imgs: ['../image/product-6.jpg', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
-        img_extra: ['../image/product-6.jpg', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
-        product_same:[
-            {
-                img: '../image/product-1.jpg',
-                mini_title: 'Hoa quả',
-                name_product: 'Nho xanh',
-                price: '12,000 đ',
-                discount: '20%'
-            },
-            {
-                img: '../image/product-2.jpg',
-                mini_title: 'Hoa quả',
-                name_product: 'Mùng tơi',
-                price: '12,000 đ',
-                discount: '20%'
-            },
-            {
-                img: '../image/product-3.jpg',
-                mini_title: 'Hoa quả',
-                name_product: 'Dứa',
-                price: '12,000 đ',
-                discount: '20%'
-            },
-            {
-                img: '../image/product-4.jpg',
-                mini_title: 'Hoa quả',
-                name_product: 'Củ dền',
-                price: '12,000 đ',
-                discount: '20%'
-            }
-        ]
-    },
-    {
-        id: 8,
-        img: '../image/product-7.jpg',
-        miniTitle: 'Thực phẩm khô',
-        nameProduct: 'Bơ Đăk Lăk',
-        price: 30000,
-        discount: '25%',
-        isHightlight: true,
-        isSelling: false,
-        isNew: false,
-        imgs: ['../image/product-7.jpg', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
-        img_extra: ['../image/product-7.jpg', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
-        product_same:[
-            {
-                img: '../image/product-1.jpg',
-                mini_title: 'Hoa quả',
-                name_product: 'Nho xanh',
-                price: '12,000 đ',
-                discount: '20%'
-            },
-            {
-                img: '../image/product-2.jpg',
-                mini_title: 'Hoa quả',
-                name_product: 'Mùng tơi',
-                price: '12,000 đ',
-                discount: '20%'
-            },
-            {
-                img: '../image/product-3.jpg',
-                mini_title: 'Hoa quả',
-                name_product: 'Dứa',
-                price: '12,000 đ',
-                discount: '20%'
-            },
-            {
-                img: '../image/product-4.jpg',
-                mini_title: 'Hoa quả',
-                name_product: 'Củ dền',
-                price: '12,000 đ',
-                discount: '20%'
-            }
-        ]
-    },
-    {
-        id: 9,
-        img: '../image/product-8.jpg',
-        miniTitle: 'Hoa quả',
-        nameProduct: 'Bí Ngô',
-        price: 17000,
-        discount: '10%',
+        id: 3,
+        img: '../image/product-2.jpg',
+        miniTitle: 'Rau hữu cơ',
+        nameProduct: 'Mùng tơi',
+        price: 10000,
+        discount: '5%',
         isHightlight: false,
         isSelling: true,
         isNew: false,
-        imgs: ['../image/product-8.jpg', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
-        img_extra: ['../image/product-8.jpg', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
+        imgs: ['../image/product-2.jpg', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
+        img_extra: ['../image/product-2.jpg', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
         product_same:[
             {
                 img: '../image/product-1.jpg',
@@ -504,9 +374,52 @@ let productsMain = [
                 discount: '20%'
             },
             {
-                img: '../image/product-2.jpg',
+                img: '../image/product-6.jpg',
                 mini_title: 'Hoa quả',
-                name_product: 'Mùng tơi',
+                name_product: 'Cà chua',
+                price: '12,000 đ',
+                discount: '20%'
+            },
+            {
+                img: '../image/product-3.jpg',
+                mini_title: 'Hoa quả',
+                name_product: 'Dứa',
+                price: '12,000 đ',
+                discount: '20%'
+            },
+            {
+                img: '../image/product-4.jpg',
+                mini_title: 'Hoa quả',
+                name_product: 'Củ dền',
+                price: '12,000 đ',
+                discount: '20%'
+            }
+        ]
+    },
+    {
+        id: 3,
+        img: '../image/product-2.jpg',
+        miniTitle: 'Rau hữu cơ',
+        nameProduct: 'Mùng tơi',
+        price: 10000,
+        discount: '5%',
+        isHightlight: false,
+        isSelling: true,
+        isNew: false,
+        imgs: ['../image/product-2.jpg', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
+        img_extra: ['../image/product-2.jpg', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
+        product_same:[
+            {
+                img: '../image/product-1.jpg',
+                mini_title: 'Hoa quả',
+                name_product: 'Nho xanh',
+                price: '12,000 đ',
+                discount: '20%'
+            },
+            {
+                img: '../image/product-6.jpg',
+                mini_title: 'Hoa quả',
+                name_product: 'Cà chua',
                 price: '12,000 đ',
                 discount: '20%'
             },
@@ -528,199 +441,180 @@ let productsMain = [
     }
 ]
 
-const setLocal = (index) =>{
-    console.log('index :>> ', index);
-    console.log('productsMain :>> ', productsMain[index]);
-    let item = productsMain[index];
-    let data = {...item, name: item.nameProduct, title: item.miniTitle};
-    localStorage.setItem('detail-data', JSON.stringify(data))
-    // location.replace('../product/product.html')
+let data_cart = () =>{
+    return JSON.parse(localStorage.getItem("data-cart")) || default_data_cart;
 }
 
-let filters = {
-    category: -1,
-    price: -1,
-    other: -1,
-}
+let list_data_duplicate = [];
+let list_no_duplicate = [];
+let list_duplicate_render = [];
 
+// const sortData =() =>{
+//     list_data_duplicate = [];
+//     list_no_duplicate = [];
+//     list_duplicate_render = [];
+//     for(let i=0; i<data_cart().length; i++){
+//         for(let j=i+1; j<data_cart().length; j++){
+//             if(data_cart()[i].id === data_cart()[j].id){
+//                 list_data_duplicate.push(data_cart()[i]);
+//             }
+//         }
+//     }
+    
+//     for(let i=0; i<data_cart().length; i++){
+//         let index = list_data_duplicate.findIndex(item=> item.id === data_cart()[i].id)
+//         // console.log('index :>> ', index);
+//         if(index === -1){
+//             list_no_duplicate.push(data_cart()[i]);
+//         }
+//     }
+    
+//     for(let i=0; i<list_data_duplicate.length; i++){
+//         let index = list_duplicate_render.findIndex(item => item.id === list_data_duplicate[i].id);
+//         // console.log('index :>> ', index);
+//         if(index === -1){
+//             list_duplicate_render.push(list_data_duplicate[i]);
+//         }
+//     }
+// }
+
+
+// console.log('list_data_duplicate :>> ', list_data_duplicate);
+// console.log('list_duplicate_render :>> ', list_duplicate_render);
+  
+let list_cart = $('#shop-table-tbody');
 var formatter = new Intl.NumberFormat("en-US", {
     // style: "currency",
     currency: "VND",
 });
 
-const paging_dom = $('#paging');
-
-let perPage = 6;
-let currentPage = 1;
-let totalItem = productsMain.length;
-let totalPage = totalItem % perPage > 0 ? Math.floor(totalItem/perPage) + 1 : Math.floor(totalItem/perPage);
-
-const changePage = (page) =>{
-    currentPage = page;;
-    filterList(productsMain);
-}
-
-const renderPage = () =>{
-    let str = '';
-    for(let i=1; i<= totalPage; i++){
-        str+= `<li onclick="changePage(${i})" class="page-item"><a class="page-link" href="#">${i}</a></li>`;
-    }
-    return str;
-}
-
-
-const renderList = (list) =>{
-    let str = "";
-    let lastIndex = perPage*currentPage-1;
-    let firstIndex = lastIndex -5;
-    let currentList = [...list].splice(firstIndex, 6)
-    currentList.forEach((item, index)=>{
-        str += `
-        <div class="mini-product">
-            <div class="img-product">
-                <img src="${item.img}" alt="">
-                <div onclick = "setLocal(${index})" class="info"><a href= "../product/product.html">Xem chi tiết</a></div>
-            </div>
-            <div class="product-txt">
-                <p class="mini-title">${item.miniTitle}</p>
-                <p class="name-product">${item.nameProduct}</p>
-                <p class="price">${formatter.format(item.price)} đ</p>
-                <div class="discount">${item.discount}</div>
-            </div>
-        </div>
-        `;
+const renderCount = (item) =>{
+    let count = 0;
+    list_data_duplicate.forEach(it =>{
+        if(it.id === item.id){
+            count ++;
+        }
     })
-    return str;
+    return count;
 }
 
-const filterList = (list) =>{
-    let els = renderList(list);
-    showItemMain.html("");
+const totalPrice = () =>{
+    let price = 0;
+    data_cart().forEach(item =>{
+        price += item.price;
+    })
+    return price;
+}
 
-    showItemMain.append(`
-        ${els}
+const updateLocal = (data) =>{
+    localStorage.setItem('data-cart', JSON.stringify(data));
+    updateList();
+}
+
+const addProduct = (id) =>{
+    // console.log('id :>> ', id);
+    let index = data_cart().findIndex(item => item.id === id);
+    let item = data_cart()[index]
+    let newData = [...data_cart()];
+    newData.push(item);
+    console.log('newData :>> ', newData);
+    updateLocal(newData);
+}
+
+const handleDelete = (id) =>{
+    // let index = data_cart().findIndex(item => item.id === id);
+    let index = -1;
+    for(let i = data_cart().length - 1; i>=0; i--){
+        if(data_cart()[i].id === id){
+            index = i;
+            break;
+        }
+    }
+    let newData = [...data_cart()];
+    newData.splice(index, 1);
+    console.log('newData :>> ', newData);
+    return newData;
+}
+
+const reduceProduct = (id)=>{
+    let newData = handleDelete(id);
+    updateLocal(newData);
+}
+
+const deleteProduct = (id) =>{
+    let data = [...data_cart()];
+    let newData = [];
+    data.forEach(item => {
+        if(+id !== +item.id){
+            newData.push(item);
+        }
+    });
+    updateLocal(newData);
+}
+
+const append = (item, count) =>{
+    list_cart.append(`
+        <tr>
+            <td onclick = deleteProduct(${item.id }) class="product-delete">
+                <i class="far fa-trash-alt"></i>
+            </td>
+            <td class="product-thumbnail">
+                <a href=""><img src="${item.img}" alt=""></a>
+            </td>
+            <td class="product-name">
+                ${item.nameProduct}
+            </td>
+            <td class="product-price red bold">
+                ${formatter.format(item.price)} đ
+            </td>
+            <td class="product-quantity">
+                <button onclick = "addProduct(${item.id})">+</button> <button>${count}</button> <button onclick = "reduceProduct(${item.id})">-</button>
+            </td>
+            <td class="product-subtotal red bold">
+                ${formatter.format(item.price*count)} đ
+            </td>
+        </tr>
     `)
 }
-filterList(productsMain);
 
+let information_checkout = $('#total-table-tbody');
 
-const handleFilterByCategory = (data, order)=>{
-    let newData;
-    if(order === 1){
-        newData = data.filter((item) =>{
-            return item.miniTitle === "Rau hữu cơ";
-        })
-    }
-    if(order === 2){
-        newData = data.filter((item) =>{
-            return item.miniTitle === "Hoa quả";
-        })
-    }
-    if(order ===3){
-        newData = data.filter((item) =>{
-            return item.miniTitle === "Thực phẩm khô";
-        })
-    }
-    return newData;
-}
-
-const handleFilterByPrice = (data, order)=>{
-    // console.log('data :>> ', data);
-    // console.log('order :>> ', order);
-    let newData;
-    if(order === 1){
-        newData = data.filter((item) =>{
-            return item.price < 10000;
-        })
-    }
-    if(order === 2){
-        newData = data.filter((item) =>{
-            return item.price >= 10000 && item.price < 20000;
-        })
-    }
-    if(order ===3){
-        newData = data.filter((item) =>{
-            return item.price >= 20000 && item.price < 30000;
-        })
-    }
-    if(order ===4){
-        newData = data.filter((item) =>{
-            return item.price >= 30000;
-        })
-    }
-    // console.log('newData :>> ', newData);
-    return newData;
-}
-
-const handleFilterByOther = (data, order)=>{
-    let newData;
-    if(order === 1){
-        newData = data.filter((item) =>{
-            return item.isHightlight === true;
-        })
-    }
-    if(order === 2){
-        newData = data.filter((item) =>{
-            return item.isSelling === true;
-        })
-    }
-    if(order ===3){
-        newData = data.filter((item) =>{
-            return item.isNew == true;
-        })
-    }
-    return newData;
-}
-
-const filterByCategory = (order) =>{
-    filters.category = order;
-    handleFilter();
-}
-
-const filterByPrice = (order) =>{
-    filters.price = order;
-    handleFilter();
-}
-
-const filterByOther = (order) =>{
-    filters.other = order;
-    handleFilter();
-}
-
-const handleFilter = ()=>{
-    // console.log('filters :>> ', filters);
-    let newData = [...productsMain];
-    for(let f in filters){
-        if(filters[f] === -1){
-            delete filters[f];
-        }
-    }
-    for(let f in filters){
-        if(f === 'price'){
-            newData = handleFilterByPrice(newData, filters[f])
-        }
-        if(f === 'category'){
-            newData = handleFilterByCategory(newData, filters[f])
-        }
-        if(f === 'other'){
-            newData = handleFilterByOther(newData, filters[f])
-        }
-    }
-    filterList(newData);
-}
-
-const updatePaging = () =>{
-    paging_dom.append(`
-        <nav aria-label="Page navigation example">
-            <ul class="pagination">
-            <li class="page-item"><a class="page-link" href="#">Trước</a></li>
-            ${renderPage()}
-            <li class="page-item"><a class="page-link" href="#">Sau</a></li>
-            </ul>
-        </nav>
+const updateCheckOut = () =>{
+    information_checkout.html('');
+    information_checkout.append(`
+        <tr>
+        <td class="total-sub">Tổng tiền</td>
+        <td class="total-sub-price red bold">${formatter.format(totalPrice())} đ</td>
+        </tr>
     `)
 }
-updatePaging();
+
+const updateList = () =>{
+    list_cart.html('');
+    let data = data_cart();
+    data.forEach((item, index)=>{
+        let id = item.id;
+        let isExist = false;
+        if(index > 0){
+            for(let i= index-1; i>=0; i--){
+                if(id === data[i].id){
+                    isExist = true;
+                }
+            }
+        }
+        if(!isExist){
+            let count = 0;
+            for(let i=0; i<data.length; i++){
+                if(data[i].id == id){
+                    count++;
+                }
+            }
+            append(item, count);
+        }
+    })
+    updateCheckOut();
+};
+updateList();
 
 
 $('#footer').append(`
@@ -857,4 +751,3 @@ $('.after1').click(()=>{
     $('.left-hightlight').css("transform", "translateX(-280px)");
     $('.after1').addClass('hide');
 })
-

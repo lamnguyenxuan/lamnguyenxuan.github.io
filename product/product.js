@@ -45,7 +45,7 @@ $('#header').append(`
                 <a href=""><i class="fas fa-search"></i></a>
             </div>
             <div class="cart">
-                <a href=""><span>Giỏ hàng</span><i class="fas fa-cart-plus"></i></a>
+                <a href="../cart/cart.html"><span>Giỏ hàng</span><i class="fas fa-cart-plus"></i></a>
             </div>
         </div>
         
@@ -138,6 +138,7 @@ window.addEventListener("scroll", function () {
 })
 
 let default_data ={
+    id:1,
     name: 'Rau bắp cải',
     title: 'Rau hữu cơ',
     price: '12,000 đ',
@@ -347,6 +348,12 @@ const renderImage = () => {
     }
     return str;
 }
+
+var formatter = new Intl.NumberFormat("en-US", {
+    // style: "currency",
+    currency: "VND",
+});
+
 const renderImageExtra = () => {
     let str = "";
     let indexExtra = 1;
@@ -360,6 +367,20 @@ const renderImageExtra = () => {
     }
     return str;
 }
+
+let data_cart = () => {
+    return JSON.parse(localStorage.getItem("data-cart")) || [];
+};
+
+const addToCart = () =>{
+    let new_data_cart = [...data_cart()];
+    new_data_cart.push(data_detail);
+    localStorage.setItem('data-cart',JSON.stringify(new_data_cart));
+    alert('Thêm vào giỏ hàng thành công')
+}
+
+
+
 product_detail.append(`
     <div class="show-left">
         <div class="img-main-big">
@@ -376,18 +397,13 @@ product_detail.append(`
         </div>
     </div>
     <div class="show-right">
-        <h4><a href="">Trang chủ</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="">${data_detail.title}</a></h4>
+        <h4><a href="../index.html">Trang chủ</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a>${data_detail.title}</a></h4>
         <p class="product-name">${data_detail.name}</p>
-        <p class="product-price">12,000 đ</p>
+        <p class="product-price">${formatter.format(data_detail.price)} đ</p>
         <p class="status">Còn hàng</p>
         <div class="quantity-card">
-            <div class="quantity buttons_added">
-                <input type="button" value="-" class="minus">
-                <input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
-                <input type="button" value="+" class="plus">
-            </div>
             <div class="add-to-card">
-                <a href=""><h4>Mua hàng</h4></a>
+                <a onclick="addToCart()"><h4>Thêm vào giỏ hàng</h4></a>
             </div>
         </div>
         <div class="product-info">
@@ -482,7 +498,7 @@ const setLocal = (index) =>{
         }
     ]};
     localStorage.setItem('detail-data', JSON.stringify(data))
-    location.replace('./product.html')
+    // location.replace('./product.html')
 }
 
 let list_product_same = $('#list-product-same');
@@ -492,7 +508,7 @@ data_detail.product_same.forEach((item, index) =>{
     <div class="mini-product">
         <div class="img-product">
             <img src="${item.img}" alt="">
-            <div onclick = "setLocal(${index})" class="info">Xem chi tiết</div>
+            <div onclick = "setLocal(${index})" class="info"><a href= "./product.html">Xem chi tiết</a></div>
         </div>
         <div class="product-txt">
             <p class="mini-title">${item.mini_title}</p>
@@ -668,28 +684,28 @@ $('.after1').click(()=>{
 })
 
 
-function wcqib_refresh_quantity_increments() {
-    jQuery("div.quantity:not(.buttons_added), td.quantity:not(.buttons_added)").each(function(a, b) {
-        var c = jQuery(b);
-        c.addClass("buttons_added"), c.children().first().before('<input type="button" value="-" class="minus" />'), c.children().last().after('<input type="button" value="+" class="plus" />')
-    })
-}
-String.prototype.getDecimals || (String.prototype.getDecimals = function() {
-    var a = this,
-        b = ("" + a).match(/(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/);
-    return b ? Math.max(0, (b[1] ? b[1].length : 0) - (b[2] ? +b[2] : 0)) : 0
-}), jQuery(document).ready(function() {
-    wcqib_refresh_quantity_increments()
-}), jQuery(document).on("updated_wc_div", function() {
-    wcqib_refresh_quantity_increments()
-}), jQuery(document).on("click", ".plus, .minus", function() {
-    var a = jQuery(this).closest(".quantity").find(".qty"),
-        b = parseFloat(a.val()),
-        c = parseFloat(a.attr("max")),
-        d = parseFloat(a.attr("min")),
-        e = a.attr("step");
-    b && "" !== b && "NaN" !== b || (b = 0), "" !== c && "NaN" !== c || (c = ""), "" !== d && "NaN" !== d || (d = 0), "any" !== e && "" !== e && void 0 !== e && "NaN" !== parseFloat(e) || (e = 1), jQuery(this).is(".plus") ? c && b >= c ? a.val(c) : a.val((b + parseFloat(e)).toFixed(e.getDecimals())) : d && b <= d ? a.val(d) : b > 0 && a.val((b - parseFloat(e)).toFixed(e.getDecimals())), a.trigger("change")
-});
+// function wcqib_refresh_quantity_increments() {
+//     jQuery("div.quantity:not(.buttons_added), td.quantity:not(.buttons_added)").each(function(a, b) {
+//         var c = jQuery(b);
+//         c.addClass("buttons_added"), c.children().first().before('<input type="button" value="-" class="minus" />'), c.children().last().after('<input type="button" value="+" class="plus" />')
+//     })
+// }
+// String.prototype.getDecimals || (String.prototype.getDecimals = function() {
+//     var a = this,
+//         b = ("" + a).match(/(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/);
+//     return b ? Math.max(0, (b[1] ? b[1].length : 0) - (b[2] ? +b[2] : 0)) : 0
+// }), jQuery(document).ready(function() {
+//     wcqib_refresh_quantity_increments()
+// }), jQuery(document).on("updated_wc_div", function() {
+//     wcqib_refresh_quantity_increments()
+// }), jQuery(document).on("click", ".plus, .minus", function() {
+//     var a = jQuery(this).closest(".quantity").find(".qty"),
+//         b = parseFloat(a.val()),
+//         c = parseFloat(a.attr("max")),
+//         d = parseFloat(a.attr("min")),
+//         e = a.attr("step");
+//     b && "" !== b && "NaN" !== b || (b = 0), "" !== c && "NaN" !== c || (c = ""), "" !== d && "NaN" !== d || (d = 0), "any" !== e && "" !== e && void 0 !== e && "NaN" !== parseFloat(e) || (e = 1), jQuery(this).is(".plus") ? c && b >= c ? a.val(c) : a.val((b + parseFloat(e)).toFixed(e.getDecimals())) : d && b <= d ? a.val(d) : b > 0 && a.val((b - parseFloat(e)).toFixed(e.getDecimals())), a.trigger("change")
+// });
 
 var description_mini = $('.description-mini');
 var uses = $('.uses');

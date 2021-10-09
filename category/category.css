@@ -1,4 +1,3 @@
-
 #header{
     background-color: white;
 }
@@ -73,7 +72,7 @@ select:hover{
     margin-top: 40px;
     padding: 0 2%;
 }
-.product-hightlight h4{
+.product-hightlight h2{
     text-transform: uppercase;
     color: #70C130;
     margin-bottom: 15px;
@@ -115,8 +114,24 @@ select:hover{
 .left-hightlight{
     width: 25%;
 }
+.left-hightlight h3{
+    text-transform: uppercase;
+}
+.category-sorting{
+    margin-top: 25px;
+}
+.category-sorting, .price-sorting{
+    margin-bottom: 35px;
+}
+.item-sorting{
+    margin-top: 15px;
+}
 .right-hightlight{
     width: 75%;
+    /* display: flex;
+    flex-wrap: wrap; */
+}
+.product-menu-item{
     display: flex;
     flex-wrap: wrap;
 }
@@ -132,9 +147,12 @@ select:hover{
     text-align: center;
     position: relative;
     margin-bottom: 20px;
-}
-.mini-product{
     margin-right: 2%;
+    /* max-height: 370px; */
+}
+.pagination{
+    justify-content: flex-end;
+    
 }
 .mini-product:nth-child(3n){
     margin-right: 0;

@@ -45,7 +45,7 @@ $('#header').append(`
 	<a href=""><i class="fas fa-search"></i></a>
 </div>
 <div class="cart">
-	<a href=""><span>Giỏ hàng</span><i class="fas fa-cart-plus"></i></a>
+	<a href="./cart/cart.html"><span>Giỏ hàng</span><i class="fas fa-cart-plus"></i></a>
 </div>
 </div>
 
@@ -128,14 +128,36 @@ close_search.click(function(){
 
 var lastScrollTop = 0;
 var header_top = document.getElementById("header");
+var item_header_top = document.querySelectorAll("#header a");
+var item_length = item_header_top.length;
+var item_logo = document.querySelector(".logo img");
+var sub_item = document.querySelectorAll(".sub-menu .sub-item a"); 
 window.addEventListener("scroll", function () {
 	var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 	if (scrollTop > lastScrollTop) {
-		// header_top.style.top = "80px";
-		header_top.style.background = "#777777";
+		header_top.style.background = "white";
+        header_top.style.borderBottom = "1px solid #888888";
+        header_top.style.boxShadow = "0 0 10px #888888";
+        for(let index=0; index < item_length; index++){
+            item_header_top[index].style.color = "#905d2f";
+        }
+        item_header_top[1].style.color = "#70C130";
+        document.querySelector(".search input").classList.add("my-class");
+        document.querySelector(".search input").style.borderColor = "#905d2f";
+        item_logo.src = "image/darklogo.png";
 	} else {
-		// header_top.style.top = "0";
 		header_top.style.background = "none";
+        header_top.style.borderBottom = "none";
+        header_top.style.boxShadow = "none";
+        for(let index=0; index < item_length; index++){
+            item_header_top[index].style.color = "white";
+        }
+        for(let index=0; index < sub_item.length; index++){
+            sub_item[index].style.color = "#121212";
+        }
+        document.querySelector(".search input").classList.remove("my-class");
+        document.querySelector(".search input").style.borderColor = "rgba(255,255,255,0.09)";
+        item_logo.src = "image/lightlogo.png";
 	}
 	// lastScrollTop = scrollTop;
 })
@@ -242,8 +264,8 @@ let products1 = [
 		name: 'Nho xanh',
 		price: '12,000 đ',
 		discount: '20%',
-		imgs: ['../image/product-main.png', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
-        img_extra: ['../image/product-9.png', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
+		imgs: ['../image/product-1.jpg', '../image/product-3.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
+        img_extra: ['../image/product-1.jpg', '../image/product-3.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
         product_same:[
             {
                 img: '../image/product-5.jpg',
@@ -1212,21 +1234,21 @@ const setLocal1 = (index) =>{
     console.log('productsMain :>> ', products1[index]);
     let item = products1[index];
     localStorage.setItem('detail-data', JSON.stringify(item))
-    location.replace('./product/product.html')
+    // location.replace('./product/product.html')
 }
 const setLocal2 = (index) =>{
     console.log('index :>> ', index);
     console.log('productsMain :>> ', products1[index]);
     let item = products2[index];
     localStorage.setItem('detail-data', JSON.stringify(item))
-    location.replace('./product/product.html')
+    // location.replace('./product/product.html')
 }
 const setLocal3 = (index) =>{
     console.log('index :>> ', index);
     console.log('productsMain :>> ', products1[index]);
     let item = products3[index];
     localStorage.setItem('detail-data', JSON.stringify(item))
-    location.replace('./product/product.html')
+    // location.replace('./product/product.html')
 }
 
 products1.forEach((item, index)=>{
@@ -1234,7 +1256,7 @@ products1.forEach((item, index)=>{
 		<div class="mini-product">
 			<div class="img-product">
 				<img src=${item.img} alt="">
-				<div onclick = "setLocal1(${index})" class="info">Xem chi tiết</div>
+				<div onclick = "setLocal1(${index})" class="info"><a href= "./product/product.html">Xem chi tiết</a></div>
 			</div>
 			<div class="product-txt">
 				<p class="mini-title">${item.title}</p>
@@ -1251,7 +1273,7 @@ products2.forEach((item, index)=>{
 		<div class="mini-product">
 			<div class="img-product">
 				<img src=${item.img} alt="">
-				<div onclick = "setLocal2(${index})" class="info">Xem chi tiết</div>
+				<div onclick = "setLocal2(${index})" class="info"><a href= "./product/product.html">Xem chi tiết</a></div>
 			</div>
 			<div class="product-txt">
 				<p class="mini-title">${item.title}</p>
@@ -1268,7 +1290,7 @@ products3.forEach((item, index)=>{
 		<div class="mini-product">
 			<div class="img-product">
 				<img src=${item.img} alt="">
-				<div onclick = "setLocal3(${index})" class="info">Xem chi tiết</div>
+				<div onclick = "setLocal3(${index})" class="info"><a href= "./product/product.html">Xem chi tiết</a></div>
 			</div>
 			<div class="product-txt">
 				<p class="mini-title">${item.title}</p>
