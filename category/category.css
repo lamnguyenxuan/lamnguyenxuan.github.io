@@ -119,15 +119,17 @@ select:hover{
     font-size: 25px;
 }
 .category-sorting{
-    margin-top: 25px;
+    margin-top: 15px;
 }
 .category-sorting, .price-sorting{
-    margin-bottom: 35px;
+    margin-bottom: 20px;
 }
 .item-sorting{
     margin-top: 15px;
+    font-size: 15px;
 }
 .right-hightlight{
+    padding-left: 10px;
     width: 75%;
     /* display: flex;
     flex-wrap: wrap; */
