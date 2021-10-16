@@ -149,6 +149,11 @@ th, td{
 .product-delete i{
     font-size: 20px;
 }
+.button-cart > a{
+    color: red;
+    margin-top: 25px;
+}
+
 @media(max-width: 767px){
     #main{
         flex-wrap: wrap;
