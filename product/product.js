@@ -12,6 +12,15 @@ $('#header').append(`
                         <a href="../category/category.html">Sản phẩm</a>
                     </li>
                     <li class="item">
+                        <span>Xem thêm&nbsp;&nbsp;<i class="far fa-angle-down"></i></span>
+                        <ul class="sub-menu">
+                            <div class="arrow-up pos-1"></div>
+                            <li class= "sub-item"><a href="">Giới thiệu</></li>
+                            <li class= "sub-item"><a href="">Trang tin tức</></li>
+                            <li class= "sub-item"><a href="">Liên hệ</></li>
+                        </ul>
+                    </li>
+                    <li class="item">
                         <a href="">
                             Giới thiệu&nbsp;&nbsp;
                             <i class="far fa-angle-down"></i>
@@ -142,198 +151,8 @@ let default_data ={
     name: 'Rau bắp cải',
     title: 'Rau hữu cơ',
     price: '12,000 đ',
-    imgs: ['../image/product-main.png', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
-    img_extra: ['../image/product-9.png', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
-    product_same:[
-        {
-            img: '../image/product-1.jpg',
-            mini_title: 'Hoa quả',
-            name_product: 'Nho xanh',
-            price: '12,000 đ',
-            discount: '20%',
-            name: 'Rau bắp cải',
-            title: 'Rau hữu cơ',
-            price: '12,000 đ',
-            imgs: ['../image/product-main.png', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
-            img_extra: ['../image/product-9.png', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
-            product_same:[
-                {
-                    img: '../image/product-1.jpg',
-                    mini_title: 'Hoa quả',
-                    name_product: 'Nho xanh',
-                    price: '12,000 đ',
-                    discount: '20%',
-                    name: 'Rau bắp cải',
-                    title: 'Rau hữu cơ',
-                    price: '12,000 đ',
-                    imgs: ['../image/product-main.png', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
-                    img_extra: ['../image/product-9.png', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
-                },
-                {
-                    img: '../image/product-2.jpg',
-                    mini_title: 'Hoa quả',
-                    name_product: 'Mùng tơi',
-                    price: '12,000 đ',
-                    discount: '20%'
-                },
-                {
-                    img: '../image/product-3.jpg',
-                    mini_title: 'Hoa quả',
-                    name_product: 'Dứa',
-                    price: '12,000 đ',
-                    discount: '20%'
-                },
-                {
-                    img: '../image/product-4.jpg',
-                    mini_title: 'Hoa quả',
-                    name_product: 'Củ dền',
-                    price: '12,000 đ',
-                    discount: '20%'
-                }
-            ]
-        },
-        {
-            img: '../image/product-1.jpg',
-            mini_title: 'Hoa quả',
-            name_product: 'Nho xanh',
-            price: '12,000 đ',
-            discount: '20%',
-            name: 'Rau bắp cải',
-            title: 'Rau hữu cơ',
-            price: '12,000 đ',
-            imgs: ['../image/product-main.png', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
-            img_extra: ['../image/product-9.png', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
-            product_same:[
-                {
-                    img: '../image/product-1.jpg',
-                    mini_title: 'Hoa quả',
-                    name_product: 'Nho xanh',
-                    price: '12,000 đ',
-                    discount: '20%',
-                    name: 'Rau bắp cải',
-                    title: 'Rau hữu cơ',
-                    price: '12,000 đ',
-                    imgs: ['../image/product-main.png', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
-                    img_extra: ['../image/product-9.png', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
-                },
-                {
-                    img: '../image/product-2.jpg',
-                    mini_title: 'Hoa quả',
-                    name_product: 'Mùng tơi',
-                    price: '12,000 đ',
-                    discount: '20%'
-                },
-                {
-                    img: '../image/product-3.jpg',
-                    mini_title: 'Hoa quả',
-                    name_product: 'Dứa',
-                    price: '12,000 đ',
-                    discount: '20%'
-                },
-                {
-                    img: '../image/product-4.jpg',
-                    mini_title: 'Hoa quả',
-                    name_product: 'Củ dền',
-                    price: '12,000 đ',
-                    discount: '20%'
-                }
-            ]
-        },
-        {
-            img: '../image/product-1.jpg',
-            mini_title: 'Hoa quả',
-            name_product: 'Nho xanh',
-            price: '12,000 đ',
-            discount: '20%',
-            name: 'Rau bắp cải',
-            title: 'Rau hữu cơ',
-            price: '12,000 đ',
-            imgs: ['../image/product-main.png', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
-            img_extra: ['../image/product-9.png', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
-            product_same:[
-                {
-                    img: '../image/product-1.jpg',
-                    mini_title: 'Hoa quả',
-                    name_product: 'Nho xanh',
-                    price: '12,000 đ',
-                    discount: '20%',
-                    name: 'Rau bắp cải',
-                    title: 'Rau hữu cơ',
-                    price: '12,000 đ',
-                    imgs: ['../image/product-main.png', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
-                    img_extra: ['../image/product-9.png', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
-                },
-                {
-                    img: '../image/product-2.jpg',
-                    mini_title: 'Hoa quả',
-                    name_product: 'Mùng tơi',
-                    price: '12,000 đ',
-                    discount: '20%'
-                },
-                {
-                    img: '../image/product-3.jpg',
-                    mini_title: 'Hoa quả',
-                    name_product: 'Dứa',
-                    price: '12,000 đ',
-                    discount: '20%'
-                },
-                {
-                    img: '../image/product-4.jpg',
-                    mini_title: 'Hoa quả',
-                    name_product: 'Củ dền',
-                    price: '12,000 đ',
-                    discount: '20%'
-                }
-            ]
-        },
-        {
-            img: '../image/product-1.jpg',
-            mini_title: 'Hoa quả',
-            name_product: 'Nho xanh',
-            price: '12,000 đ',
-            discount: '20%',
-            name: 'Rau bắp cải',
-            title: 'Rau hữu cơ',
-            price: '12,000 đ',
-            imgs: ['../image/product-main.png', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
-            img_extra: ['../image/product-9.png', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
-            product_same:[
-                {
-                    img: '../image/product-1.jpg',
-                    mini_title: 'Hoa quả',
-                    name_product: 'Nho xanh',
-                    price: '12,000 đ',
-                    discount: '20%',
-                    name: 'Rau bắp cải',
-                    title: 'Rau hữu cơ',
-                    price: '12,000 đ',
-                    imgs: ['../image/product-main.png', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
-                    img_extra: ['../image/product-9.png', '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'],
-                },
-                {
-                    img: '../image/product-2.jpg',
-                    mini_title: 'Hoa quả',
-                    name_product: 'Mùng tơi',
-                    price: '12,000 đ',
-                    discount: '20%'
-                },
-                {
-                    img: '../image/product-3.jpg',
-                    mini_title: 'Hoa quả',
-                    name_product: 'Dứa',
-                    price: '12,000 đ',
-                    discount: '20%'
-                },
-                {
-                    img: '../image/product-4.jpg',
-                    mini_title: 'Hoa quả',
-                    name_product: 'Củ dền',
-                    price: '12,000 đ',
-                    discount: '20%'
-                }
-            ]
-        },
-    ]
+    imgs: ['../image/product-main.png', '../image/product-99.jpg', '../image/product-999.jpg', '../image/product-9999.jpg'],
+    img_extra: ['../image/product-9.png', '../image/product-99.jpg', '../image/product-999.jpg', '../image/product-9999.jpg']
 }
 let data_detail = JSON.parse(localStorage.getItem('detail-data')) || default_data
 let product_detail = $('#show-product');
@@ -397,8 +216,8 @@ product_detail.append(`
         </div>
     </div>
     <div class="show-right">
-        <h4><a href="../index.html">Trang chủ</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a>${data_detail.title}</a></h4>
-        <p class="product-name">${data_detail.name}</p>
+        <h4><a href="../index.html">Trang chủ</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a>${data_detail.miniTitle}</a></h4>
+        <p class="product-name">${data_detail.nameProduct}</p>
         <p class="product-price">${formatter.format(data_detail.price)} đ</p>
         <p class="status">Còn hàng</p>
         <div class="quantity-card">
@@ -466,59 +285,12 @@ const setLocal = (index) =>{
     console.log('index :>> ', index);
     console.log('defa :>> ', product_info.product_same[index]);
     let item = product_info.product_same[index];
-    let data = {...item, name: item.name_product, title: item.mini_title, imgs: [item.img, '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'], img_extra: [item.img, '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'], 
-        product_same:[
-        {
-            img: '../image/product-1.jpg',
-            mini_title: 'Hoa quả',
-            name_product: 'Nho xanh',
-            price: '12,000 đ',
-            discount: '20%'
-        },
-        {
-            img: '../image/product-2.jpg',
-            mini_title: 'Hoa quả',
-            name_product: 'Mùng tơi',
-            price: '12,000 đ',
-            discount: '20%'
-        },
-        {
-            img: '../image/product-3.jpg',
-            mini_title: 'Hoa quả',
-            name_product: 'Dứa',
-            price: '12,000 đ',
-            discount: '20%'
-        },
-        {
-            img: '../image/product-4.jpg',
-            mini_title: 'Hoa quả',
-            name_product: 'Củ dền',
-            price: '12,000 đ',
-            discount: '20%'
-        }
-    ]};
+    let data = {...item, name: item.nameProduct, title: item.miniTitle, imgs: [item.img, '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg'], img_extra: [item.img, '../image/product-1.jpg', '../image/product-2.jpg', '../image/product-3.jpg']
+    };
     localStorage.setItem('detail-data', JSON.stringify(data))
-    // location.replace('./product.html')
 }
 
 let list_product_same = $('#list-product-same');
-
-data_detail.product_same.forEach((item, index) =>{
-    list_product_same.append(`
-    <div class="mini-product">
-        <div class="img-product">
-            <img src="${item.img}" alt="">
-            <div onclick = "setLocal(${index})" class="info"><a href= "./product.html">Xem chi tiết</a></div>
-        </div>
-        <div class="product-txt">
-            <p class="mini-title">${item.mini_title}</p>
-            <p class="name-product">${item.name_product}</p>
-            <p class="price">${item.price}</p>
-            <div class="discount">${item.discount}</div>
-        </div>
-    </div>
-    `)
-})
 
 
 let info_description = $('#info-description-mini')

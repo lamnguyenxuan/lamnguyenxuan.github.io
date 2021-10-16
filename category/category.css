@@ -116,6 +116,7 @@ select:hover{
 }
 .left-hightlight h3{
     text-transform: uppercase;
+    font-size: 25px;
 }
 .category-sorting{
     margin-top: 25px;
@@ -296,5 +297,13 @@ select:hover{
     }
     .mini-product:nth-child(2n){
         margin-right: 0;
+    }
+}
+@media(max-width: 1000px){
+    .product-hightlight h2{
+        font-size: 25px;
+    }
+    .product-hightlight h3{
+        font-size: 20px;
     }
 }

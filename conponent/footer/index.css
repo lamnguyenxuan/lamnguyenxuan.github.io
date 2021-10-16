@@ -29,6 +29,9 @@ img{
     color: white;
     padding-top: 50px;
 }
+#footer a{
+    color: white!important;
+}
 .footer-mini{
     width: 80%;
     margin: auto;

@@ -23,6 +23,8 @@
     padding-right: 1.5%;
     display: flex;
     color: #777777;
+    min-height: 267px;
+    justify-content: center;
 }
 
 .left{
@@ -180,5 +182,8 @@ th, td{
     .product-thumbnail img{
         width: 80px;
         margin-left: 10px;
+    }
+    .product-name{
+        width: 50px;
     }
 }

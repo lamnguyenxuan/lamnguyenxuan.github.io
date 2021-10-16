@@ -127,6 +127,22 @@ img{
 .item:hover .sub-menu{
     display: block;
 }
+.item span{
+    cursor: pointer;
+    font-size: 12.8px;
+    text-transform: uppercase;
+    color: #905d2f;
+}
+.item span:hover{
+    color: #70C130;
+}
+.item:nth-child(3) li{
+    border-bottom: 1px solid #c7c7c7;
+    padding: 3px 0;
+}
+.item:nth-child(3){
+    display: none;
+}
 .search{
     width: 155px;
     display: flex;
@@ -174,6 +190,32 @@ img{
 }
 #header a:hover{
     color: #70C130!important;
+}
+
+@media(max-width: 1170px){
+    .menu-item > .item:nth-child(4),.menu-item > .item:nth-child(5),.menu-item > .item:nth-child(6), .menu-item > .item:nth-child(7){
+        display: none;
+    }
+    .menu-item > .item:nth-child(3){
+        display: flex;
+    }
+    #header .container .menu{
+        width: 40%;
+    }
+}
+@media(max-width: 925px){
+    .cart span{
+        display: none;
+    }
+    #header .container .logo{
+        margin-right: 5px;
+    }
+    #header .container .menu-item .item{
+        margin: 0 11px;
+    }
+    #header .container .search{
+        margin-left: 10px;
+    }
 }
 @media (max-width:767px){
     #header{

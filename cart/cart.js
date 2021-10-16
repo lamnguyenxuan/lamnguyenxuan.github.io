@@ -12,6 +12,15 @@ $('#header').append(`
                         <a href="../category/category.html">Sản phẩm</a>
                     </li>
                     <li class="item">
+                        <span>Xem thêm&nbsp;&nbsp;<i class="far fa-angle-down"></i></span>
+                        <ul class="sub-menu">
+                            <div class="arrow-up pos-1"></div>
+                            <li class= "sub-item"><a href="">Giới thiệu</></li>
+                            <li class= "sub-item"><a href="">Trang tin tức</></li>
+                            <li class= "sub-item"><a href="">Liên hệ</></li>
+                        </ul>
+                    </li>
+                    <li class="item">
                         <a href="">
                             Giới thiệu&nbsp;&nbsp;
                             <i class="far fa-angle-down"></i>
@@ -444,49 +453,19 @@ let default_data_cart = [
 let data_cart = () =>{
     return JSON.parse(localStorage.getItem("data-cart")) || default_data_cart;
 }
+let main_cart = $('#main');
 
 let list_data_duplicate = [];
 let list_no_duplicate = [];
 let list_duplicate_render = [];
 
-// const sortData =() =>{
-//     list_data_duplicate = [];
-//     list_no_duplicate = [];
-//     list_duplicate_render = [];
-//     for(let i=0; i<data_cart().length; i++){
-//         for(let j=i+1; j<data_cart().length; j++){
-//             if(data_cart()[i].id === data_cart()[j].id){
-//                 list_data_duplicate.push(data_cart()[i]);
-//             }
-//         }
-//     }
-    
-//     for(let i=0; i<data_cart().length; i++){
-//         let index = list_data_duplicate.findIndex(item=> item.id === data_cart()[i].id)
-//         // console.log('index :>> ', index);
-//         if(index === -1){
-//             list_no_duplicate.push(data_cart()[i]);
-//         }
-//     }
-    
-//     for(let i=0; i<list_data_duplicate.length; i++){
-//         let index = list_duplicate_render.findIndex(item => item.id === list_data_duplicate[i].id);
-//         // console.log('index :>> ', index);
-//         if(index === -1){
-//             list_duplicate_render.push(list_data_duplicate[i]);
-//         }
-//     }
-// }
-
-
-// console.log('list_data_duplicate :>> ', list_data_duplicate);
-// console.log('list_duplicate_render :>> ', list_duplicate_render);
   
 let list_cart = $('#shop-table-tbody');
 var formatter = new Intl.NumberFormat("en-US", {
     // style: "currency",
     currency: "VND",
 });
+
 
 const renderCount = (item) =>{
     let count = 0;
@@ -583,36 +562,47 @@ const updateCheckOut = () =>{
     information_checkout.html('');
     information_checkout.append(`
         <tr>
-        <td class="total-sub">Tổng tiền</td>
-        <td class="total-sub-price red bold">${formatter.format(totalPrice())} đ</td>
+            <td class="count">Số lượng</td>
+            <td class="total-sub-price red bold">${data_cart().length}</td>
+        </tr>
+        <tr>
+            <td class="total-sub">Tổng tiền</td>
+            <td class="total-sub-price red bold">${formatter.format(totalPrice())} đ</td>
         </tr>
     `)
 }
 
+
 const updateList = () =>{
-    list_cart.html('');
-    let data = data_cart();
-    data.forEach((item, index)=>{
-        let id = item.id;
-        let isExist = false;
-        if(index > 0){
-            for(let i= index-1; i>=0; i--){
-                if(id === data[i].id){
-                    isExist = true;
+    if(data_cart().length === 0){
+        main_cart.html('');
+        main_cart.append('Không có sản phẩm nào');
+    }
+    else{
+        list_cart.html('');
+        let data = data_cart();
+        data.forEach((item, index)=>{
+            let id = item.id;
+            let isExist = false;
+            if(index > 0){
+                for(let i= index-1; i>=0; i--){
+                    if(id === data[i].id){
+                        isExist = true;
+                    }
                 }
             }
-        }
-        if(!isExist){
-            let count = 0;
-            for(let i=0; i<data.length; i++){
-                if(data[i].id == id){
-                    count++;
+            if(!isExist){
+                let count = 0;
+                for(let i=0; i<data.length; i++){
+                    if(data[i].id == id){
+                        count++;
+                    }
                 }
+                append(item, count);
             }
-            append(item, count);
-        }
-    })
-    updateCheckOut();
+        })
+        updateCheckOut();
+    }
 };
 updateList();
 
