@@ -33,7 +33,7 @@ img{
     color: white!important;
 }
 .footer-mini{
-    width: 80%;
+    max-width: 1170px;
     margin: auto;
     line-height: 24px;
 }

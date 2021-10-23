@@ -19,6 +19,9 @@
     margin: auto;
     padding-top: 110px;
 }
+a{
+    text-decoration: none!important;
+}
 
 .shop-title{
     display: flex;

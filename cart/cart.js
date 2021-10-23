@@ -337,7 +337,7 @@ const append = (item, count) =>{
                 ${formatter.format(item.price)} đ
             </td>
             <td class="product-quantity">
-                <button onclick = "addProduct(${item.id})">+</button> <button>${count}</button> <button onclick = "reduceProduct(${item.id})">-</button>
+                <button onclick = "reduceProduct(${item.id})">-</button> <button>${count}</button> <button onclick = "addProduct(${item.id})">+</button>
             </td>
             <td class="product-subtotal red bold">
                 ${formatter.format(item.price*count)} đ

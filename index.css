@@ -1037,7 +1037,8 @@ img{
     padding-top: 50px;
 }
 .footer-mini{
-    width: 80%;
+    max-width: 1170px;
+    padding: 0 15px;
     margin: auto;
     line-height: 24px;
 }
@@ -1057,20 +1058,20 @@ img{
 }
 .footer-navigation .contact{
     flex-basis: 30%;
-    margin-right: 5%;
+    margin-right: 7%;
     display: flex;
     justify-content: center;
 }
 .footer-navigation .link{
     flex-basis: 30%;
-    margin-right: 5%;
+    margin-right: 3%;
     display: flex;
     justify-content: center;
 }
 .footer-navigation .category{
     flex-basis: 30%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .contact-mini, .link-mini, .category-mini{
